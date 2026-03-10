@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -7,11 +7,14 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* TADY JE LOGO */}
+          <Link href="#uvod" className="hover:opacity-80 transition">
           <img 
             src="/logo.png" 
             alt="Luzar Interiér Logo" 
             className="h-12 w-auto object-contain"
-          />
+            />
+          </Link>
+          
           <div className="hidden md:flex gap-8 text-stone-600 font-light uppercase tracking-widest text-sm">
             <a href="#realizace" className="hover:text-amber-700 transition">Realizace</a>
             <a href="#" className="hover:text-amber-700 transition">O nás</a>
@@ -21,7 +24,7 @@ export default function Home() {
       </nav>
 
       {/* HERO SEKCE */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section id ="uvod" className="relative h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
           <img
@@ -31,7 +34,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-20 text-center text-white px-4 max-w-5xl">
+        <div className="relative z-20 text-center  text-white px-10 max-w-7xl">
           <span className="uppercase tracking-[0.3em] text-sm mb-4 block font-light">
             Tradiční truhlářství z Opavy
           </span>
