@@ -19,24 +19,32 @@ export default function Home() {
               />
             </a>
 
+            {/* Desktop menu - viditelné na PC */}
+            <div className="hidden md:flex gap-6 lg:gap-8 text-stone-600 font-light uppercase tracking-widest text-sm">
+              <a href="#realizace" className="hover:text-amber-700 transition">Realizace</a>
+              <a href="#onas" className="hover:text-amber-700 transition">O nás</a>
+              <a href="#kontakt" className="hover:text-amber-700 transition">Kontakt</a>
+            </div>
+
+            {/* Mobilní hamburger + overlay menu */}
             <input type="checkbox" id="nav-toggle" className="peer sr-only" aria-hidden="true" />
             <label htmlFor="nav-toggle" className="md:hidden flex flex-col gap-1.5 cursor-pointer p-2 -mr-2" aria-label="Přepnout menu">
-              <span className="block w-6 h-0.5 bg-stone-700 rounded transition-transform peer-checked:rotate-45" />
+              <span className="block w-6 h-0.5 bg-stone-700 rounded" />
               <span className="block w-6 h-0.5 bg-stone-700 rounded" />
               <span className="block w-6 h-0.5 bg-stone-700 rounded" />
             </label>
-
-            <div
-            style={{ minHeight: '30svh' }} 
-            className="fixed z-50 top-16 sm:top-20 left-0 right-0 bottom-0 bg-white flex flex-col gap-6 py-8 px-6 text-stone-900 font-medium uppercase tracking-widest text-lg opacity-0 invisible translate-y-[-10px] transition-all duration-300 pointer-events-none peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0 peer-checked:pointer-events-auto md:!flex md:!flex-row md:!static md:!inset-auto md:!bg-transparent md:!py-0 md:!px-0 md:!text-sm md:!font-light md:!text-stone-600 md:!opacity-100 md:!visible md:!translate-y-0 md:!pointer-events-auto md:gap-6 lg:gap-8">
-              <a href="#realizace" className="hover:text-amber-700 transition py-2 border-b border-stone-200 md:border-0">Realizace</a>
-              <a href="#onas" className="hover:text-amber-700 transition py-2 border-b border-stone-200 md:border-0">O nás</a>
+            <div 
+            style={{ minHeight: '30vh' }}
+            className="fixed z-40 inset-0 top-16 sm:top-20 bg-white md:hidden flex flex-col gap-6 py-8 px-6 text-stone-900 font-medium uppercase tracking-widest text-lg opacity-0 invisible translate-y-[-10px] transition-all duration-300 pointer-events-none peer-checked:opacity-100 peer-checked:visible peer-checked:translate-y-0 peer-checked:pointer-events-auto">
+              <a href="#realizace" className="hover:text-amber-700 transition py-2 border-b border-stone-200">Realizace</a>
+              <a href="#onas" className="hover:text-amber-700 transition py-2 border-b border-stone-200">O nás</a>
               <a href="#kontakt" className="hover:text-amber-700 transition py-2">Kontakt</a>
             </div>
           </div>
         </nav>
       </header>
-      <main className="min-h-screen bg-white">      {/* HERO SEKCE */}
+{/* HERO SEKCE */}
+      <main className="min-h-screen bg-white">      
       <section id="uvod" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20" aria-labelledby="hero-heading">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
@@ -69,7 +77,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* SEKCE REALIZACE */}
+    {/* SEKCE REALIZACE */}
       <section id="realizace" className="py-16 sm:py-20 md:py-24 bg-white" aria-labelledby="realizace-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
